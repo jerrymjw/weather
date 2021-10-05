@@ -1,0 +1,12 @@
+@use '../sass/font' as *;
+@use '../sass/color';
+
+.App {
+  min-height: 100vh;
+  background: color.$primary;
+
+  // Default font settings
+  font-family: 'Jost';
+  color: white;
+  text-align: center;
+}

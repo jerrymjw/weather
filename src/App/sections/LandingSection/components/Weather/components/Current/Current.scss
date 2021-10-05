@@ -1,0 +1,135 @@
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/mixin';
+
+@mixin tempFont($color) {
+  color: $color;
+  font-size: 10rem;
+  font-weight: 400;
+  @include mixin.addDegreeAfter();
+
+  @include mixin.tabletStyle {
+    font-size: 6rem;
+  }
+}
+
+.weather__current {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+
+  background: color.$weatherConditionBg;
+  box-shadow: 2.42057px 2.42057px 4.84115px rgba(0, 0, 0, 0.25);
+  border-radius: 7.26172px;
+
+  @include mixin.tabletStyle {
+    flex-direction: row;
+    align-items: center;
+    height: 17rem;
+  }
+
+  &__condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-blend-mode: multiply;
+    background: color.$weatherConditionBg;
+    box-shadow: 2.42057px 2.42057px 4.84115px rgba(0, 0, 0, 0.25);
+    border-radius: 7.26172px;
+
+    @include mixin.tabletStyle {
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      max-width: 8rem;
+      max-height: 8rem;
+      object-fit: cover;
+    }
+    span {
+      font-size: 2.5rem;
+
+      @include mixin.tabletStyle {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__temp {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+    width: 100%;
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__label {
+      font-size: 2.5rem;
+
+      @include mixin.tabletStyle {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__degree {
+      &_min {
+        @include tempFont(color.$tertiary);
+      }
+
+      &_max {
+        @include tempFont(color.$secondary);
+      }
+    }
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__time {
+      font-size: 5rem;
+
+      @include mixin.tabletStyle {
+        font-size: 3rem;
+      }
+    }
+
+    &__sun {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0.5rem 1rem;
+      border-top: 1px solid color.$landingSectionText;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          display: block;
+          min-height: 8rem;
+          object-fit: cover;
+          @include mixin.tabletStyle {
+            max-width: 4rem;
+            min-height: 100%;
+          }
+        }
+      }
+
+      &__label {
+        font-size: 2rem;
+        @include mixin.tabletStyle {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

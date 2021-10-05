@@ -1,0 +1,23 @@
+@mixin addDegreeAfter() {
+  &:after {
+    content: '°';
+  }
+}
+
+@mixin tabletStyle {
+  @media only screen and (min-width: 641px) {
+    @content;
+  }
+}
+
+@mixin desktopStyle {
+  @media only screen and (min-width: 1240px) {
+    @content;
+  }
+}
+
+@mixin customViewportStyle($minWidth: 1240) {
+  @media only screen and (min-width: $minWidth) {
+    @content;
+  }
+}

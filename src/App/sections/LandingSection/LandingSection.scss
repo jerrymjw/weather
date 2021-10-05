@@ -1,0 +1,16 @@
+@use '../../../sass/color';
+@use '../../../sass/mixin';
+
+.landing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100vw;
+  background: color.$landingSectionBg;
+  box-shadow: 15.8333px 23.3333px 59.1667px rgba(0, 0, 0, 0.25);
+
+  @include mixin.tabletStyle {
+    height: 98vh;
+  }
+}

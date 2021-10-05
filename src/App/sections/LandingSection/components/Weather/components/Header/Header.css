@@ -1,0 +1,30 @@
+.weather__header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-bottom: 1px solid #ffffff;
+  text-align: left;
+  font-size: 2.4rem;
+}
+@media only screen and (min-width: 641px) {
+  .weather__header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.weather__header select {
+  background-color: #00000000;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 2rem;
+  color: #ffffff;
+}
+@media only screen and (min-width: 1240px) {
+  .weather__header select:hover {
+    background-color: #ffffff10;
+  }
+}
+.weather__header select > option {
+  background-color: grey;
+}

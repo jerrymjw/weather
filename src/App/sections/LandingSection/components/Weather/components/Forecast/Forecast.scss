@@ -1,0 +1,71 @@
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/mixin';
+
+.weather__forecast {
+  z-index: 1;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: auto;
+
+  font-size: 2rem;
+  font-weight: 300;
+
+  @include mixin.desktopStyle {
+    gap: 0.8rem;
+    font-size: 1.6rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    background: color.$weatherConditionBg;
+    box-shadow: 2.42057px 2.42057px 4.84115px #00000025;
+    border-radius: 5.75872px;
+
+    @include mixin.tabletStyle {
+      padding: 1rem;
+      height: 16rem;
+    }
+
+    &__condition {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        display: block;
+        width: 80px;
+        height: 80px;
+
+        @include mixin.tabletStyle {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+    &__temp {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 3rem;
+
+      &_low {
+        color: color.$tertiary;
+        @include mixin.addDegreeAfter();
+      }
+
+      &_high {
+        color: color.$secondary;
+        @include mixin.addDegreeAfter();
+      }
+    }
+  }
+}

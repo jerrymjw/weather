@@ -1,0 +1,40 @@
+@use '../../../../../sass/color';
+@use '../../../../../sass/mixin';
+
+.weather {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  box-shadow: 7.26172px 7.26172px 15.7337px #00000025;
+  background-position: 50% 50%;
+
+  @include mixin.tabletStyle {
+    padding: 2rem 0;
+    height: auto;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 2rem;
+    height: 100%;
+
+    @include mixin.tabletStyle {
+      gap: 2rem;
+      justify-content: flex-start;
+      width: 85%;
+      font-weight: 300;
+    }
+
+    @include mixin.desktopStyle {
+      width: 75%;
+    }
+
+    @include mixin.customViewportStyle(1620px) {
+      width: 60%;
+    }
+  }
+}
